@@ -1,0 +1,19 @@
+.Title-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
+
+    font-size: xx-large;
+}
+
+
+.Input-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+
+    gap: 1rem;
+
+}
