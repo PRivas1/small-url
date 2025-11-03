@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Button = () => {
   return (
     <StyledWrapper>
-      <button className="button" role="button">Generate</button>
+      <button className="button">Generate</button>
     </StyledWrapper>
   );
 }
