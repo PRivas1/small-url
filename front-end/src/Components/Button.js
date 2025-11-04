@@ -1,60 +1,31 @@
-// Modified from: https://uiverse.io/adamgiebl/massive-insect-65
+// Modified from: https://uiverse.io/ke1221/ancient-walrus-24
 import React from 'react';
 import styled from 'styled-components';
 
 const Button = () => {
   return (
     <StyledWrapper>
-      <button className="button">Generate</button>
+      <button>Create</button>
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled.div`
-  .button {
-    align-items: center;
-    appearance: none;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    border-width: 2px;
-    border-color: #242424;
-    box-shadow: 0px 10px 20px -18px;
-    box-sizing: border-box;
-    color: #242424;
+  button {
+    color: #090909;
+    padding: .85em 1.5em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #f5f5f5;
     cursor: pointer;
-    display: inline-flex;
-    height: 56px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 24px;
-    padding-right: 24px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: box-shadow 0.15s, transform 0.15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
-    font-size: 20px;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   }
 
-  .button:focus {
-    outline: none;
-    border-bottom: 2px solid #242424;
-  }
-
-  .button:hover {
-    border-bottom: 2px solid #242424;
-    transform: translateY(-2px);
-  }
-
-  .button:active {
-    border-bottom: 2px solid #242424;
-    transform: translateY(2px);
+  button:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
   }`;
 
 export default Button;
