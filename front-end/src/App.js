@@ -23,7 +23,7 @@ function App() {
   //display original URL
   console.log(url);
   //display shortened URL
-  setShortendedUrl(window.location.origin + "/" + await response.text());
+  setShortendedUrl(window.location.origin + "/api/" + await response.text());
   console.log(shortenedUrl);
   
   }

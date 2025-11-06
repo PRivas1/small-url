@@ -30,13 +30,13 @@ app.http('redirect', {
             }else{
                 return{
                     status: 302,
-                    headers: { 'Location': 'https://roblox.com'}
+                    headers: { 'Location': homePageUrl} //broken
                 };
             }
         }catch(error){
             return{
                 status: 302,
-                headers: { 'Location': 'https://roblox.com'}
+                headers: { 'Location': homePageUrl}
             };
         }
     }

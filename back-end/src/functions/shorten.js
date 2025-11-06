@@ -14,11 +14,17 @@ const container = client.database(databaseId).container(containerId);
 app.http('shorten', {
     methods: ['POST'],
     authLevel: 'anonymous',
-    route: 'api/shorten',
     handler: async (request, context) => {
         //context.log(`Http function processed request for url "${request.url}"`);
         try{
             const incomingUrl = await request.text(); // get the original url
+
+            /* breaks api
+            if (!incomingUrl.startsWith('http://') && !incomingUrl.startsWith('https://')) {
+                incomingUrl = "https://" + incomingUrl;
+            }
+            */
+
             const newId = Math.random().toString(36).substring(2,8); //random urlId formula
 
             // make new item
@@ -34,7 +40,6 @@ app.http('shorten', {
             return { body: newId };
 
         }catch(error){
-            context.log.error(error);
             return { status: 500, body: "Error connecting to or writing to Cosmos DB." };
         }
     }
