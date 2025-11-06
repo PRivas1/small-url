@@ -2,10 +2,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = () => {
+const Input = ({onTextChange}) => {
   return (
     <StyledWrapper>
-      <input className="input" name="text" placeholder="Search..." type="search" />
+      <input 
+      className="input" 
+      name="text" 
+      placeholder="Search..." 
+      type="search" 
+      onChange={e => onTextChange(e.target.value)}/>
     </StyledWrapper>
   );
 }

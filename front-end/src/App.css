@@ -12,7 +12,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 70vh;
 
     gap: 1rem;
+}
+
+.Output-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
 }
