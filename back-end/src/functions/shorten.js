@@ -27,10 +27,10 @@ app.http('shorten', {
             }
 
             //send item to db
-            const {resource: createdItem } = await container.items.create(newItem); 
+            const { resource: createdItem } = await container.items.create(newItem); 
 
             // return id
-            return {body: newId};
+            return { body: newId };
 
         }catch(error){
             context.log.error(error);

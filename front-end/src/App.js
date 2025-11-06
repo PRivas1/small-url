@@ -8,6 +8,7 @@ function App() {
 
   //initialize the useState for url input
   const [url, setUrl] = useState("");
+  const [shortenedUrl, setShortendedUrl] = useState("");
 
   const  shortenApi = async() => {
   
@@ -22,7 +23,8 @@ function App() {
   //display original URL
   console.log(url);
   //display shortened URL
-  console.log(window.location.origin + "/" + await response.text());
+  setShortendedUrl(window.location.origin + "/" + await response.text());
+  console.log(shortenedUrl);
   
   }
 
@@ -39,7 +41,7 @@ function App() {
       <Button  text="Create" onClick={shortenApi}/>
     </div>
     <div className="Output-container">
-      <p itemID="Output-link">URL</p>
+      <a href={shortenedUrl} rel="noopener noreferrer" target="_blank">{shortenedUrl}</a>
     </div>
     </>
   );
