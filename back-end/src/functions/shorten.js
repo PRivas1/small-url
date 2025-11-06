@@ -14,6 +14,7 @@ const container = client.database(databaseId).container(containerId);
 app.http('shorten', {
     methods: ['POST'],
     authLevel: 'anonymous',
+    route: 'api/shorten',
     handler: async (request, context) => {
         //context.log(`Http function processed request for url "${request.url}"`);
         try{
