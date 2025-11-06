@@ -12,7 +12,7 @@ const container = client.database(databaseId).container(containerId);
 
 
 app.http('shorten', {
-    methods: ['GET', 'POST'],
+    methods: ['POST'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
         //context.log(`Http function processed request for url "${request.url}"`);
@@ -29,10 +29,8 @@ app.http('shorten', {
             //send item to db
             const {resource: createdItem } = await container.items.create(newItem); 
 
-            // return new link
-            const host = new URL(request.url).origin;
-            const smallUrl = host + "/" + createdItem.id;
-            return {body: smallUrl}; 
+            // return id
+            return {body: newId};
 
         }catch(error){
             context.log.error(error);

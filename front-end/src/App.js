@@ -15,12 +15,14 @@ function App() {
 
   const response = await fetch("/api/shorten", {
     method: "POST",
-    body: {url}
+    body: url
   });
   
 
+  //display original URL
   console.log(url);
-  console.log(await response.text());
+  //display shortened URL
+  console.log(window.location.origin + "/" + await response.text());
   
   }
 
