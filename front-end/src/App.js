@@ -7,11 +7,14 @@ import './App.css';
 
 function App() {
 
+
   //initialize the useState for url input
   const [url, setUrl] = useState("");
   const [shortenedUrl, setShortendedUrl] = useState([]);
+  
 
   const  shortenApi = async() => {
+
   
   //console.log("Click");
 
@@ -30,9 +33,10 @@ function App() {
     short: shortUrl,
     long: url
   }
-
-  setShortendedUrl(array => [newLink, ...array]);
-  console.log(shortenedUrl);
+  if(response.status == 201){
+    setShortendedUrl(array => [newLink, ...array]);
+    console.log(shortenedUrl);
+  }
   
   }
 

@@ -16,14 +16,21 @@ app.http('shorten', {
     authLevel: 'anonymous',
     handler: async (request) => {
         try{
-            //simple key check
-            if(await request.headers.get('key') !== "shortURL"){
+            //simple passphrase security
+            if(request.headers.get('key') !== "shortURL"){
                 return { 
                     status: 401, 
                     body: "Unathorized Access" 
                 };
             }
             const incomingUrl = await request.text(); // get the original url
+            // verify url
+            if(!incomingUrl || typeof incomingUrl !== "string" || incomingUrl.length > 2048){
+                return {
+                    status: 400,
+                    body: "Invalid URL"
+                };
+            }
             
 
             const newId = Math.random().toString(36).substring(2,8); //random urlId formula
@@ -38,7 +45,10 @@ app.http('shorten', {
             await container.items.create(newItem); 
 
             // return id
-            return { body: newId };
+            return { 
+                status: 201,
+                body: newId 
+            };
 
         }catch(error){
             return { 
