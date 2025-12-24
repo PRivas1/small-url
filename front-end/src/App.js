@@ -37,6 +37,7 @@ function App() {
 
   return (
     <>
+    <div className="background">
     <div className="Title-container">
       <h1>Small URL Generator</h1>
     </div>
@@ -55,6 +56,7 @@ function App() {
           long={item.long}
         />
       ))}
+    </div>
     </div>
     </>
   );
