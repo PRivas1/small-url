@@ -12,18 +12,18 @@ const container = client.database(databaseId).container(containerId);
 app.http('redirect', {
     methods: ['GET'],
     authLevel: 'anonymous',
-    route: '{shortId}',
-    handler: async (request, context) => {
+    route: '{shortId}',   // ./api/[shortId]
+    handler: async (request) => {
         const shortId = request.params.shortId;
 
         try{
-            const { resource: item } = await container.item(shortId, shortId).read();
+            const { resource: item } = await container.item(shortId, shortId).read(); //fetch link
             if (item && item.originalUrl) {
                 return{
                     status: 302,
                     headers: { 'Location': item.originalUrl }
                 };
-            }else{
+            }else{  //error inside try for no link found
                 return{
                     status: 404,
                     body: "404: Link not found"

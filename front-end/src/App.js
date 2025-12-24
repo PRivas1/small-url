@@ -17,7 +17,8 @@ function App() {
 
   const response = await fetch("/api/shorten", {
     method: "POST",
-    body: url
+    body: url,
+    headers: {"key": "shortURL"}
   });
   
 

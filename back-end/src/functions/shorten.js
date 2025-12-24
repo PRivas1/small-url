@@ -14,10 +14,17 @@ const container = client.database(databaseId).container(containerId);
 app.http('shorten', {
     methods: ['POST'],
     authLevel: 'anonymous',
-    handler: async (request, context) => {
-        //context.log(`Http function processed request for url "${request.url}"`);
+    handler: async (request) => {
         try{
+            //simple key check
+            if(await request.headers.get('key') !== "shortURL"){
+                return { 
+                    status: 401, 
+                    body: "Unathorized Access" 
+                };
+            }
             const incomingUrl = await request.text(); // get the original url
+            
 
             const newId = Math.random().toString(36).substring(2,8); //random urlId formula
 
@@ -28,13 +35,16 @@ app.http('shorten', {
             }
 
             //send item to db
-            const { resource: createdItem } = await container.items.create(newItem); 
+            await container.items.create(newItem); 
 
             // return id
             return { body: newId };
 
         }catch(error){
-            return { status: 500, body: "Error connecting to or writing to Cosmos DB." };
+            return { 
+                status: 500, 
+                body: "Error connecting to or writing to Cosmos DB." 
+            };
         }
     }
 });
