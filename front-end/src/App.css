@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 10vh;
+    min-height: 20vh;
 
     font-size: xx-large;
 }
@@ -12,14 +12,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 70vh;
+    min-height: 20vh;
 
     gap: 1rem;
 }
 
 .Output-container{
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 10vh;
+    overflow-y: auto;
+    height: 450px;
+    width: fit-content;
+    margin: 0 auto;
 }

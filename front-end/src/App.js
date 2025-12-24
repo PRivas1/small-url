@@ -1,5 +1,6 @@
 import Textbox from './Components/Textbox';
 import Button from './Components/Button';
+import Link from './Components/Link'
 import { useState } from "react";
 import './App.css';
 
@@ -8,7 +9,7 @@ function App() {
 
   //initialize the useState for url input
   const [url, setUrl] = useState("");
-  const [shortenedUrl, setShortendedUrl] = useState("");
+  const [shortenedUrl, setShortendedUrl] = useState([]);
 
   const  shortenApi = async() => {
   
@@ -23,7 +24,13 @@ function App() {
   //display original URL
   console.log(url);
   //display shortened URL
-  setShortendedUrl(window.location.origin + "/api/" + await response.text());
+  const shortUrl = window.location.origin + "/api/" + await response.text();
+  const newLink = {
+    short: shortUrl,
+    long: url
+  }
+
+  setShortendedUrl(array => [newLink, ...array]);
   console.log(shortenedUrl);
   
   }
@@ -41,7 +48,13 @@ function App() {
       <Button  text="Create" onClick={shortenApi}/>
     </div>
     <div className="Output-container">
-      <a href={shortenedUrl} rel="noopener noreferrer" target="_blank">{shortenedUrl}</a>
+      {shortenedUrl.map((item, index) => (
+        <Link 
+          key={index} 
+          short={item.short} 
+          long={item.long}
+        />
+      ))}
     </div>
     </>
   );
@@ -49,4 +62,9 @@ function App() {
 
 
 
+
+
+
 export default App;
+
+
