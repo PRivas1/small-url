@@ -19,12 +19,6 @@ app.http('shorten', {
         try{
             const incomingUrl = await request.text(); // get the original url
 
-            /* breaks api
-            if (!incomingUrl.startsWith('http://') && !incomingUrl.startsWith('https://')) {
-                incomingUrl = "https://" + incomingUrl;
-            }
-            */
-
             const newId = Math.random().toString(36).substring(2,8); //random urlId formula
 
             // make new item

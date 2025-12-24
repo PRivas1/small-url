@@ -14,10 +14,6 @@ app.http('redirect', {
     authLevel: 'anonymous',
     route: '{shortId}',
     handler: async (request, context) => {
-        const proto = request.headers['x-forwarded-proto'] || 'http';
-        const host = request.headers['x-forwarded-host'];
-        const homePageUrl = proto + "://" + host;
-
         const shortId = request.params.shortId;
 
         try{
@@ -29,14 +25,14 @@ app.http('redirect', {
                 };
             }else{
                 return{
-                    status: 302,
-                    headers: { 'Location': homePageUrl} //broken
-                };
+                    status: 404,
+                    body: "404: Link not found"
+                };                
             }
         }catch(error){
             return{
-                status: 302,
-                headers: { 'Location': homePageUrl}
+                status: 500,
+                body: "500: Internal server error"
             };
         }
     }
