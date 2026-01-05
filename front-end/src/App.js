@@ -33,7 +33,7 @@ function App() {
     short: shortUrl,
     long: url
   }
-  if(response.status == 201){
+  if(response.status === 201){
     setShortendedUrl(array => [newLink, ...array]);
     console.log(shortenedUrl);
   }
