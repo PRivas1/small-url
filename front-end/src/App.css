@@ -32,11 +32,11 @@
 
 /*Modified version of https://uiverse.io/muhammad_1180/ordinary-fish-9*/
 .background {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  background: radial-gradient(100% 150% at 50% 10%, #ffffff 40%, rgb(94, 94, 94) 100%);
-  z-index: -10;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    background: radial-gradient(100% 150% at 50% 10%, #ffffff 40%, rgb(94, 94, 94) 100%);
+    z-index: -10;
 }

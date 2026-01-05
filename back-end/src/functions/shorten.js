@@ -25,7 +25,7 @@ app.http('shorten', {
             }
             const incomingUrl = await request.text(); // get the original url
             // verify url
-            if(!incomingUrl || typeof incomingUrl !== "string" || incomingUrl.length > 2048){
+            if(!incomingUrl || typeof incomingUrl !== "string" || incomingUrl.length > 4096){
                 return {
                     status: 400,
                     body: "Invalid URL"

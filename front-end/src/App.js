@@ -14,30 +14,28 @@ function App() {
   
 
   const  shortenApi = async() => {
+    //console.log("Click");
 
-  
-  //console.log("Click");
+    const response = await fetch("/api/shorten", {
+      method: "POST",
+      body: url,
+      headers: {"key": "shortURL"}
+    });
+    
 
-  const response = await fetch("/api/shorten", {
-    method: "POST",
-    body: url,
-    headers: {"key": "shortURL"}
-  });
-  
-
-  //display original URL
-  console.log(url);
-  //display shortened URL
-  const shortUrl = window.location.origin + "/api/" + await response.text();
-  const newLink = {
-    short: shortUrl,
-    long: url
-  }
-  if(response.status === 201){
-    setShortendedUrl(array => [newLink, ...array]);
-    console.log(shortenedUrl);
-  }
-  
+    //display original URL
+    console.log(url);
+    //display shortened URL
+    const shortUrl = window.location.origin + "/api/" + await response.text();
+    const newLink = {
+      short: shortUrl,
+      long: url
+    }
+    if(response.status === 201){
+      setShortendedUrl(array => [newLink, ...array]);
+      console.log(shortenedUrl);
+    }
+    
   }
 
   return (
@@ -68,10 +66,4 @@ function App() {
 }
 
 
-
-
-
-
 export default App;
-
-
