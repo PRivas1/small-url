@@ -180,7 +180,4 @@ The SWA CLI will proxy all API requests from the frontend to your local Azure Fu
 - Modified version of [Pattern](https://uiverse.io/muhammad_1180/ordinary-fish-9) by `muhammad_118`
 - SVG for [Copy](https://reactsvgicons.com) from `reactsvgicons.com`
 
-## 📄 License
 
-This project is licensed under the **MIT License**.  
-See the [LICENSE](./LICENSE) file for details.
