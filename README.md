@@ -176,6 +176,9 @@ The SWA CLI will proxy all API requests from the frontend to your local Azure Fu
 ## **Credits**
 - Modified version of [Button](https://uiverse.io/ke1221/ancient-walrus-24) by `ke1221`
 - Modified version of [Input](https://uiverse.io/alexruix/evil-parrot-25) by `alexruix`
+- Modified version of [Card](https://uiverse.io/andrew-demchenk0/nervous-bear-89) by `andrew-demchenk0`
+- Modified version of [Pattern](https://uiverse.io/muhammad_1180/ordinary-fish-9) by `muhammad_118`
+- SVG for [Copy](hhttps://reactsvgicons.com) from `reactsvgicons.com`
 
 ## 📄 License
 
