@@ -2,15 +2,15 @@
 
 A full-stack, serverless URL shortener application built entirely on the Azure cloud platform.
 
-## 🚀 Live Demo
+## Live Demo
 
 **Check out the project at: [smallurl.live](https://smallurl.live)**
 
-## 📋 Project Overview
+## Project Overview
 
 This application provides a simple interface to create shortened URLs. It runs on a completely serverless architecture, leveraging Azure Functions for the backend API and Azure Cosmos DB for a highly scalable, low-latency NoSQL database. The frontend is a responsive React application deployed with Azure Static Web Apps.
 
-## ✨ Features
+## Features
 
 * **Shorten URLs:** Submit a long URL to generate a unique, short link.
 
@@ -18,7 +18,7 @@ This application provides a simple interface to create shortened URLs. It runs o
 
 * **Responsive Design:** A clean UI built with React and UIVerse.io components.
 
-## 🛠️ Tech Stack & Architecture
+## Tech Stack & Architecture
 
 This project is a full-stack serverless application hosted on Microsoft Azure.
 
@@ -70,7 +70,7 @@ The backend is composed of two main Azure Functions:
 
 ---
 
-## 🗄️ Azure Cosmos DB Structure
+## Azure Cosmos DB Structure
 
 The project uses **Azure Cosmos DB** with the following structure:
 
